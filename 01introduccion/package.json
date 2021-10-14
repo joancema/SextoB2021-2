@@ -1,0 +1,19 @@
+{
+  "name": "01introduccion",
+  "version": "1.0.0",
+  "description": "primer proyecto de introducciOn",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "introduccion",
+    "nodejs"
+  ],
+  "author": "jcevallos",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  }
+}
