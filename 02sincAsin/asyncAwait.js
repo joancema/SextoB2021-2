@@ -72,7 +72,7 @@ async function buscarAutorPorId(id){
 (async ()=>{
     try
     {
-        const libro  =  await buscarLibroPorId(123);
+        const libro  =  await buscarLibroPorId(1);
         const autor =  await buscarAutorPorId(libro.idautor);
         libro.autor = autor;
         console.log(libro)
