@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/sextob?retryWrites=true&w=majority";
+const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/sextob?retryWrites=true&w=majority"
 
 
 mongoose.connect(conexion).then(respuesta=>{
