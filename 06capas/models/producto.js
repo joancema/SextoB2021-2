@@ -23,6 +23,11 @@ const ProductoSchema = Schema({
     minimo:{
         type:Number,
         default:0
+    },
+    categoria:{
+        type: Schema.Types.ObjectId  ,
+        ref: 'Categoria',
+        required:true
     }
 })
 

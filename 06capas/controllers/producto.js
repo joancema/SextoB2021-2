@@ -11,7 +11,10 @@ const obtenerProductos= async (req, res = response)=>{
     const [ total, productos  ] =  await Promise.all(
         [
             Producto.countDocuments(query),
-            Producto.find(query).skip(desde).limit(limite)
+            Producto.find(query)
+            .populate('categoria',"nombre estado")
+            .skip(desde)
+            .limit(limite)
         ]
     );
 
@@ -23,7 +26,7 @@ const obtenerProductos= async (req, res = response)=>{
 ///  GET   http://localhost:3000/api/productos/234234234324
 const obtenerProducto = async (req, res = response)=>{
     const { id } =  req.params
-    const producto = await Producto.findById(id)
+    const producto = await Producto.findById(id).populate('categoria')
     res.json(producto)
 }
 ///  POST   http://localhost:3000/api/productos/       body { nombre:'', precio:23, costo:23}

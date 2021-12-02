@@ -9,7 +9,9 @@ const { dbConnection } =  require('./database/config')
 
 class Server {
     constructor(){
-        this.app =  express();
+        this.app =  express.Router();
+        this.router = express.Router();
+
         this.port = process.env.PORT;
 
         this.paths = {
@@ -21,6 +23,11 @@ class Server {
         this.conectarDB();
         this.middlewares();
         this.routes();
+
+        this.router.use('/v1/pruebas', this.app )
+        
+
+        this._express = express().use(this.router );
         
     }
     //// ASOCIAR RUTAS, MIDDLEWARES, LEVANTAR BASE DE DATOS
@@ -34,11 +41,12 @@ class Server {
     }
     routes(){
         this.app.use( this.paths.productos  , require('./routes/productos') )
+        this.app.use(this.paths.categorias, require('./routes/categorias') )
         
     }
     
     listen(){
-        this.app.listen(this.port, ()=>{
+        this._express.listen(this.port, ()=>{
             console.log(`Servidor corriendo en el puerto ${this.port}`)
         })
 
