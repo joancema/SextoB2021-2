@@ -1,0 +1,29 @@
+<div class= "container" >
+    <div class="row">
+        <br/>
+        <a href="" class="btn btn-primary">Nuevo</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Costo</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+                
+            </thead>
+            {{#each productos}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.precio}}</td>
+                    <td>{{this.costo}}</td>
+                    <td><a href="">Modificar</a></td>
+                    <td><a href="">Eliminar</a></td>
+                </tr>
+            {{/each}}
+
+
+        </table>
+
+    </div>
+</div>
