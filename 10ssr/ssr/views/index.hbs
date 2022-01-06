@@ -1,7 +1,7 @@
 <div class= "container" >
     <div class="row">
         <br/>
-        <a href="" class="btn btn-primary">Nuevo</a>
+        <a href="/producto/nuevo" class="btn btn-primary">Nuevo</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -17,8 +17,8 @@
                     <td>{{this.nombre}}</td>
                     <td>{{this.precio}}</td>
                     <td>{{this.costo}}</td>
-                    <td><a href="">Modificar</a></td>
-                    <td><a href="">Eliminar</a></td>
+                    <td><a href="/producto/modificar/{{this._id}}">Modificar</a></td>
+                    <td><a href="/producto/eliminar/{{this._id}}">Eliminar</a></td>
                 </tr>
             {{/each}}
 
