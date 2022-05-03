@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/sextob?retryWrites=true&w=majority";
+// const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/sextob?retryWrites=true&w=majority";
+const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 ( async ()=>{
     const estado= await mongoose.connect(conexion);
     const Usuario =  mongoose.model("Usuario", {nombre:String});
